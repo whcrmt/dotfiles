@@ -1,0 +1,5 @@
+configstore/*
+scoop/*
+yazi/state/*
+powershell/gitlab_log.txt
+powershell/variables.ps1
