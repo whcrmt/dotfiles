@@ -1,0 +1,28 @@
+[manager]
+ratio = [1, 3, 3]
+sort_by = "alphabetical"
+sort_sensitive = false
+sort_dir_first = true
+show_hidden = true
+show_symlink = true
+
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, for = "linux" },
+    { run = 'nvim "%*"', block = true, for = "windows" },
+]
+play = [
+    { run = 'mpv "$@"', orphan = true, for = "linux" },
+]
+view = [
+    { run = 'feh "$@"', orphan = true, for = "linux" },
+]
+
+[open]
+prepend_rules = [
+    { mime = "*/*", use = "edit" },
+    { mime = "text/*", use = "edit" },
+    { name = "*.json", use = "edit" },
+    { mime = "video/*", use = "play" },
+    { mime = "image/*", use = "view" },
+]
